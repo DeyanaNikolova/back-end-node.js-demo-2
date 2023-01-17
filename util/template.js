@@ -3,18 +3,30 @@ const fs = require('fs/promises');
 async function loadTemplate(name) {
     try{
     const template = await fs.readFile(`./views/${name}.html`);
-    return template;
+    return template.toString();
     } catch(err){
         return '';
     }
 }
 
-function layout(html, title = 'Welcome') {
-    const layout = loadTemplate('layout');
-   return layout.replace('{{title}}', title).replace('{{body}}', html)
+async function layout(html, title = 'Welcome') {
+    const result = await loadTemplate('layout');
+   return result.replace('{{title}}', title).replace('{{body}}', html)
+}
+
+async function render(name, context) {
+    let result = await loadTemplate(name);
+    const props = Object.keys(context);
+
+    for(let prop of props){
+        result = result.replace(new RegExp(`{{${prop}}}`, 'g'), context[prop]);
+    }
+
+    return result;
 }
 
 module.exports = {
     loadTemplate,
-    layout
+    layout,
+    render
 };

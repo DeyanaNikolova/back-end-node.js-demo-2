@@ -6,7 +6,7 @@ const catalogPage = (items) => `
     <h1>Catalog</h1>
     <form method="POST" action="/create">
     <label>Name <input type="text" name="name"></label>
-    <label>S/N <input type="text" name="serial"></label>s
+    <label>S/N <input type="text" name="serial"></label>
     <input type="submit" value="Create Item">
     </form>
     <ul>
@@ -14,7 +14,7 @@ const catalogPage = (items) => `
     </ul>
 </div>`;
 
-module.exports = (req, res) => {
-    res.write(layout(catalogPage(Object.entries(database.database))));
+module.exports = async (req, res) => {
+    res.write(await layout(catalogPage(Object.entries(database.database))));
     res.end();
 };

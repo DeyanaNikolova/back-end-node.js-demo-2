@@ -7,7 +7,7 @@ const aboutPage = `
 
 
 
-module.exports = (req, res) => {
-    res.write(layout(aboutPage, 'About'));
+module.exports = async (req, res) => {
+    res.write(await layout(aboutPage, 'About'));
     res.end();
 };

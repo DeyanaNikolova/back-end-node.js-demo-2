@@ -14,7 +14,7 @@ async function layout(body, title = 'Welcome') {
 }
 
 // templating engin similar to handlebars
-async function render(name, context) {
+async function render(name, context = {}) {
     let result = await loadTemplate(name);
     const props = Object.keys(context);
 

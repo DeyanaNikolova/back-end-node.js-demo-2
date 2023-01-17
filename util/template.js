@@ -9,9 +9,8 @@ async function loadTemplate(name) {
     }
 }
 
-async function layout(html, title = 'Welcome') {
-    const result = await loadTemplate('layout');
-   return result.replace('{{title}}', title).replace('{{body}}', html)
+async function layout(body, title = 'Welcome') {
+   return render('layout', {title, body});
 }
 
 async function render(name, context) {

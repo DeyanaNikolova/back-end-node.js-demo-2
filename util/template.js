@@ -13,6 +13,7 @@ async function layout(body, title = 'Welcome') {
    return render('layout', {title, body});
 }
 
+// templating engin similar to handlebars
 async function render(name, context) {
     let result = await loadTemplate(name);
     const props = Object.keys(context);

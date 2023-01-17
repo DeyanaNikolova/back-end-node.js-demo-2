@@ -1,5 +1,5 @@
-const layout = require('../views/layout');
 const database = require('../util/database');
+const { layout } = require('../util/template');
 
 const catalogPage = (items) => `
 <div>

@@ -1,5 +1,4 @@
-const layout = require('../views/layout');
-
+const { layout } = require('../util/template');
 const aboutPage = `
 <div>
     <h1>About Us</h1>

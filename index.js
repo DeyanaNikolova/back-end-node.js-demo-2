@@ -7,6 +7,7 @@ const homeController = require('./controllers/homeController');
 const catalogController = require('./controllers/catalogController');
 const createController = require('./controllers/createController');
 const deleteController = require('./controllers/deleteController');
+const uploadController = require('./controllers/uploadController');
 
 
 router.get('/', homeController);
@@ -15,6 +16,7 @@ router.get('/catalog', catalogController);
 
 router.post('/create', createController);
 router.get('/delete', deleteController);
+router.post('/upload', uploadController);
 
 
 const port = 3000;

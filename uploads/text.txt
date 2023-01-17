@@ -1,0 +1,6 @@
+-----------------------------5948861128903267672158974083
+Content-Disposition: form-data; name="file"; filename="text.txt"
+Content-Type: text/plain
+
+Hello, loaded from file!
+-----------------------------5948861128903267672158974083--
